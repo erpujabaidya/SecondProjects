@@ -5,7 +5,7 @@ pipeline{
 
     tools{
 
-                maven 'Maven 101'
+                maven 'Maven101'
 
             }
 
@@ -46,9 +46,8 @@ post
     {  
         always 
         {  
-            echo 'This will always run'  
-        
-       
+          
+      
             mail to: 'erpujabaidya@gmail.com',
 
           subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
