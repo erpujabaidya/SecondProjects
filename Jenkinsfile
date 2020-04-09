@@ -1,47 +1,18 @@
-  pipeline{
+  node{
 
-    agent any
+stage('SCM Checkout'){
+git 'https://github.com/erpujabaidya/SecondProjects.git'
+}
+stage('Compile-Package-Create-war-file'){
+//Get maven home path
+def mvnHome= tool name: 'Maven101', type: 'maven'
+sh "${mvnHome}/bin/mvn package"
+}
+stage('Deploy to Tomcat'){
+sh "cp /var/lib/jenkins/workspace/puja_spring/target/*.jar /opt/tomcat/webapps/"
+}
 
-    tools{
-
-                maven 'Maven101'
-
-            }
-
-    stages{
-
-        stage('Source'){
-
-           steps{ 
-
-               git 'https://github.com/erpujabaidya/SecondProjects.git'}
-
-        }
-
-        stage('Compile package'){
-
-           
-
-           steps{
-
-               sh 'mvn clean package'
-
-           } 
-
-        }
-          stage('Deploy - Production') {
-            steps {
-                sh "cp /var/lib/jenkins/workspace/puja_spring/target/*.war /opt/tomcat/webapps/"
-            }
-        }
-
-       
-
-    }
-
- 
-
-    
+}
 
     post {
 
