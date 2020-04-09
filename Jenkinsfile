@@ -52,9 +52,9 @@ post
             mail bcc: '', body: 'project is successfully builded', from: '', replyTo: '', subject: 'project successfully finished.', to: 'erpujabaidya@gmail.com'
         }
         failure {
-            mail bcc: '', body:' This needs to be resolved...',  body: "${env.BUILD_URL} has result ${currentBuild.result}" from: '', replyTo: '', subject:"Status of pipeline: ${currentBuild.fullDisplayName}", to: 'erpujabaidya@gmail.com'
-        }
+             mail bcc: '', body: 'This needs to be resolved...', from: '', replyTo: '', subject: 'This needs to be resolved...', to: 'erpujabaidya@gmail.com'
     }  
+    }
 
 }
 
