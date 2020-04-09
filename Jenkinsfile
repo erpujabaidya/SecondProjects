@@ -5,7 +5,7 @@ pipeline{
 
     tools{
 
-                maven 'Maven3 101'
+                maven 'Maven 101'
 
             }
 
@@ -47,11 +47,8 @@ post
         always 
         {  
             echo 'This will always run'  
-        }
-        success {
-            mail bcc: '', body: 'project is successfully builded', from: '', replyTo: '', subject: 'project successfully finished.', to: 'erpujabaidya@gmail.com'
-        }
-        failure {
+        
+       
             mail to: 'erpujabaidya@gmail.com',
 
           subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
@@ -59,5 +56,6 @@ post
           body: "${env.BUILD_URL} has result ${currentBuild.result}"
     }
 
+}
 }
 }
