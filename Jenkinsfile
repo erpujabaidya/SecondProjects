@@ -5,7 +5,7 @@ pipeline{
 
     tools{
 
-                maven 'Maven101'
+                maven 'Maven3'
 
             }
 
