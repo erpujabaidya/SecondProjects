@@ -1,4 +1,4 @@
- 
+ def Pipeline_Message
  node{
 
 stage('SCM Checkout'){
