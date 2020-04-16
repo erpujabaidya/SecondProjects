@@ -13,7 +13,7 @@ stage('Deploy to Tomcat'){
 sh "cp /var/lib/jenkins/workspace/puja_spring/target/*.war /opt/tomcat/webapps/"
 }
 
-  }
+  
 
 
 
