@@ -10,7 +10,7 @@ def mvnHome= tool name: 'Maven101', type: 'maven'
 sh "${mvnHome}/bin/mvn package"
 }
 
-
+ }
 post 
     {  
         always 
@@ -26,4 +26,4 @@ post
 
 
 }
-}
+
